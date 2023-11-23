@@ -1,8 +1,10 @@
 const choices = ["rock", "paper", "scissers"];
 let playerScore = 0;
 let computerScore = 0;
+let gamePlay = 0;
 
 const checkWinner = (player, computer) => {
+    gamePlay++
   if (player === computer) {
     return "draw";
   } else if (player === "rock") {
@@ -55,6 +57,10 @@ const play = () => {
     console.log(`You choose : ${playerChoice}`);
   } else {
     console.log("You cheated :) ");
+    return;
+  }
+  if(gamePlay >= 5){
+    console.log("Game over");
     return;
   }
 
